@@ -1,0 +1,362 @@
+a{
+    text-decoration: none;
+    color:orange;
+    font-weight: bold;
+}
+
+a:hover{
+    color:rgb(16, 167, 11);
+}
+
+#logo{
+  height: 210px;
+  width: auto;
+}
+
+/* Menú hamburguesa (prueba) */
+
+#menu_on{
+	width:30px;
+	height: 20px;
+	position: relative;
+	z-index: 2;
+}
+ 
+#menu_on span{
+	width: 100%;
+	height: 4px;
+	border-radius: 4px;
+	display: block;
+	position: absolute;
+	background: rgb(238, 158, 11);
+	transition: all 0.25s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
+	transform-origin : 0px 100%;
+}
+ 
+#menu_on span:nth-child(2){
+	top: calc(50% - 2px);
+}
+ 
+#menu_on span:nth-child(3){
+bottom: 0;
+}
+
+nav{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left:-300px; /* Escondemos nuestro menú con un valor negativo */ 
+	width: 300px;
+	z-index: 1;
+	padding: 90px 30px 30px;
+	background: rgb(41, 172, 69);
+  border-right:solid rgb(48, 42, 42) .5px;
+	opacity: 0;
+	transition: all 0.75s ease;
+	font-size: 1.2em;
+	overflow-y: auto;
+}
+
+nav a{
+	display:block;
+	text-decoration: none;
+	padding: 10px;
+	color: rgba(66, 58, 46, 0.75);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	transition: all ease 0.25s;
+}
+ 
+nav a:hover{
+	color: rgb(245, 160, 2);
+	border-bottom-color:rgba(255,255,255,0.4);
+}
+
+.visible_menu span:nth-child(1){
+	transform: rotate(45deg) translate(-2px,1px); 
+}
+ 
+.visible_menu span:nth-child(2){
+	opacity: 0;
+}
+ 
+.visible_menu span:nth-child(3){
+	transform: rotate(-45deg) translate(-3px,3px); 
+}
+
+.visible_menu nav{
+	left: 0;
+	opacity: 1;
+}
+
+.visible_menu #content{
+  transform: translateX(260px);
+}
+
+/*Final de Menú hamburguesa (prueba)*/
+
+
+header{
+  position:fixed;
+  left: 0;
+  top:0;
+  right:0;
+  z-index: 1;
+  border-bottom: solid black 1px;
+}
+
+main{
+  padding-top:3rem;
+  left:0;
+  right:0;
+}
+
+.espacio{
+  padding-top: 4rem;
+}
+
+
+.titulo{
+  font-size: 35px;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #e99210, #4aca39);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+@media screen and (max-width: 750px) {
+
+  #logo{
+    height: auto;
+    width: auto;
+  }
+
+  .menu{
+    float: left;
+  }
+
+  .social-bar{
+    display: none;
+  }
+
+  .ocultar-div{
+    display:none;
+  }
+
+  .grid-item{
+    left:0;
+  }
+
+}
+
+
+/*
+flex-direction: row;
+top: 529px;
+right: 130px;
+*/
+
+
+/*Social Bar*/
+.social-bar {
+  position:fixed;
+  right:0;
+  top: 35%;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 100;
+}
+
+.icon {
+  color: white;
+  text-decoration: none;
+  padding: .7rem;
+  display: flex;
+  transition: all .5s;
+}
+
+/*
+.icon-facebook {
+  background: #2E406E;
+}
+
+.icon-instagram {
+  background: #b61c76;
+}
+
+.icon-mail2 {
+  background: #c91414;
+}
+
+.icon-profile{
+  background: rgb(236, 182, 5);
+}
+*/
+
+
+.icon-facebook {
+  background: rgb(238, 158, 11);
+}
+
+.icon-instagram {
+  background: rgb(238, 158, 11);
+}
+
+.icon-mail2 {
+  background: rgb(238, 158, 11);
+}
+
+.icon-profile{
+  background: rgb(238, 158, 11);
+}
+
+.icon:first-child {
+  border-radius: 1rem 0 0 0;
+}
+
+.icon:last-child {
+  border-radius: 0 0 0 1rem;
+}
+
+.social-bar a:hover {
+  /*color:#a7a5a5;*/
+  color:rgb(12, 136, 12); 
+  transition: .5s;
+}
+
+.social-footer {
+    padding: 1rem;
+    background: #8a8a8a;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .social-footer .social-footer-icons li:last-of-type {
+    margin-right: 0;
+  }
+  
+  .social-footer .social-footer-icons .fa {
+    font-size: 1.3rem;
+    color: #fefefe;
+  }
+  
+  .social-footer .social-footer-icons .fa:hover {
+    color: #4a4a4a;
+    transition: color 0.3s ease-in;
+  }
+/*Final Social Bar*/
+  
+.negrita{
+  font-weight: bold;
+}
+
+/*Ayuda y donaciones*/
+
+.grid {
+  flex:1;
+  display: grid;
+  /*width: 114em;*/
+  grid-gap: 6rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, .6fr));
+  align-items: start;
+}
+
+.grid-item {
+  background-color: #fff;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.grid-item:hover {
+  transform: translateY(-0.5%);
+  box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+}
+
+.card-img {
+  display: block;
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 3rem;
+}
+
+.card-header {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #0d0d0d;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.7;
+  color: #3d3d3d;
+  margin-bottom: 2.5rem;
+}
+
+.card-btn {
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #3363ff;
+  background-color: #d8e0fd;
+  border: none;
+  border-radius: 0.4rem;
+  transition: 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+}
+
+.card-btn span {
+  margin-left: 1rem;
+  transition: 0.2s;
+}
+
+.card-btn:hover,
+.card-btn:active {
+  background-color: #c2cffc;
+}
+
+.card-btn:hover span,
+.card-btn:active span {
+  margin-left: 1.5rem;
+}
+
+
+@media only screen and (max-width: 60em) {
+  body {
+    padding: 3rem;
+  }
+
+  .grid {
+    grid-gap: 3rem;
+  }
+}
+/*Final de ayuda y donaciones*/
+
+
+footer{
+  font-weight: bold;
+  font-style: italic;
+  font-size:larger;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

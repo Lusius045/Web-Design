@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Título -->
+    <meta charset="UTF-8">
+    <title>Donaciones</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="font.css">
+    <!-- Final de Título -->
+</head>
+<body>
+    <!--Social Bar-->
+    <div class="social-bar">
+        <a href="https://www.facebook.com/alimentosolavarria/" class="icon icon-facebook" target="_blank"></a>
+        <a href="https://www.instagram.com/sustentar.alimentos.olavarria/?hl=es" class="icon icon-instagram" target="_blank"></a>
+        <a href="mailto: comunidadsao@gmail.com" class="icon icon-mail2" target="_blank"></a>
+        <a href="index.html" class="icon icon-arrow-left" targer="_blank"></a>
+    </div>
+    <!--Final Social Bar-->
+
+    <!-- Volver -->
+    <a title="volver" href="index.html"><img src="imagenes/volver.png" alt="volver"></a>
+    <!-- Final de Volver -->
+
+    <!-- Formulario -->
+    <form action="https://formsubmit.co/lusius045criticas@gmail.com" method="post">
+        <div class="login-box">
+            <div class="row collapse expanded">
+            <div class="small-12 medium-6 column small-order-2 medium-order-1">
+                <div class="login-box-form-section">
+                <h1 class="login-box-title" id="titulo">Donaciones</h1>
+                <input class="login-box-input" type="text" name="name" placeholder="Nombre" />
+                <input class="login-box-input" type="email" name="mail" placeholder="E-mail" />
+                <input class="login-box-input" type="text" name="direc" placeholder="Dirección" />
+                <input class="login-box-input" type="text" name="dni" placeholder="DNI" />
+                <br>
+                <div id="opcion">
+                    <label>¿Qué donará?:</label>
+                    <input class="radio" type="radio" name="don" value="dinero" placeholder="Dinero"><label>Dinero</label>
+                    <input class="radio" type="radio" name="don" value="alimento" placeholder="Alimento"><label>Alimento</label>
+                    <input class="radio" type="radio" name="don" value="serv" placeholder="Trabajo comunitario"><label>Trabajo Comunitario</label>
+                </div>
+
+                <textarea id="com" placeholder="Ingrese aquí cualquier comentario que crea importante"></textarea>
+
+                <!-- Botón de ingresar -->
+                <input class="login-box-submit-button" type="submit" name="don" value="Donar"/>
+                <!-- Final de Botón de ingresar -->
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Final de Formulario -->
+
+</body>
+</html>
