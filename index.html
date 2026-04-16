@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <title>Souls-Like - Evolución de FromSoftware</title>
+</head>
+
+<body>
+  <section class="portada">
+    <img src="img/FromLogo.png" alt="Título principal" />
+    <div class="flecha"></div>
+  </section>
+
+  <section class="que">
+    <h1>🐲¿Qué es Souls-Like?🐲</h1>
+    <p>
+      El término "Souls-Like" se refiere a un subgénero de videojuegos que nació con el lanzamiento de 
+      <strong>Demon’s Souls</strong> en 2009 por parte de FromSoftware. Estos juegos se caracterizan por 
+      su alta dificultad, combates exigentes, exploración densa y narrativas crípticas que el jugador debe 
+      descubrir por su cuenta.
+    </p>
+    <p>Más allá del reto, los Souls-Like ofrecen una experiencia única donde cada muerte es una lección y cada victoria, un logro genuino. FromSoftware ha sido el estudio que definió y refinó este estilo, marcando una huella profunda en la industria del gaming.</p>
+  </section>
+
+  <section class="temporadas">
+    <h1>🕹️ Juegos disponibles 🕹️</h1>
+    <p>
+      A lo largo de los años, FromSoftware ha lanzado títulos inolvidables que definieron una era. 
+      Desde los oscuros pasillos de Boletaria hasta las vastas llanuras de las Tierras Intermedias, 
+      cada juego es un mundo propio, lleno de secretos, enemigos despiadados y paisajes que mezclan 
+      la belleza con el horror.
+    </p>
+    <br />
+    <div class="portadas">
+      <img src="img/S1.jpg" alt="Demon's Souls" data-target="modal-demons" />
+      <img src="img/S2.jpg" alt="Dark Souls" data-target="modal-dark1" />
+      <img src="img/S3.jpg" alt="Dark Souls II" data-target="modal-dark2" />
+      <img src="img/S4.jpg" alt="Dark Souls III" data-target="modal-dark3" />
+      <img src="img/S5.jpg" alt="Bloodborne" data-target="modal-bloodborne" />
+      <img src="img/S6.jpg" alt="Sekiro" data-target="modal-sekiro" />
+      <img src="img/S7.jpg" alt="Elden Ring" data-target="modal-elden" />
+    </div>
+  </section>
+
+  <!-- MODALES -->
+  <section class="modal" id="modal-demons">
+    <div class="modal_container">
+      <div class="modal_texto">
+        <h2 class="modal_titulo">Demon's Souls</h2>
+        <p class="modal_parrafo">
+          El primer Souls. Un mundo opresivo, con un combate metódico 
+          y un diseño laberíntico inolvidable.
+        </p>
+        <a href="https://www.playstation.com/es-ar/games/demons-souls/" class="fab fa-playstation btn-play"></a>
+        <a href="#" class="modal_cerrar">Volver</a>
+      </div>
+      <img class="modal_img" src="img/Demons Main.webp" alt="Demon's Souls">
+    </div>
+  </section>
+
+  <section class="modal" id="modal-dark1">
+    <div class="modal_container bg-dark1">
+      <div class="modal_texto">
+        <h2 class="modal_titulo">Dark Souls</h2>
+        <p class="modal_parrafo">
+          El clásico. Lordran te espera con su mundo interconectado, bosses 
+          legendarios y lore oculto.
+        </p>
+
+        <a href="https://store.steampowered.com/app/570940/DARK_SOULS_REMASTERED/" class="fab fa-steam btn-steam"></a>
+        <a href="#" class="modal_cerrar">Volver</a>
+      </div>
+      <img class="modal_img" src="img/DS1 Main.png" alt="Dark Souls I">
+    </div>
+  </section>
+
+  <section class="modal" id="modal-dark2">
+    <div class="modal_container bg-dark2">
+      <div class="modal_texto">
+        <h2 class="modal_titulo">Dark Souls II</h2>
+        <p class="modal_parrafo">
+          Una entrega polémica, pero con atmósfera melancólica, 
+          gran contenido y libertad de exploración. (una poronga no lo jueguen)
+        </p>
+        <a href="https://store.steampowered.com/app/335300/DARK_SOULS_II_Scholar_of_the_First_Sin/?l=spanish" class="fab fa-steam btn-steam"></a>
+        <a href="#" class="modal_cerrar">Volver</a>
+      </div>
+      <img class="modal_img" src="img/DS2 Main.webp" alt="Dark Souls II">
+    </div>
+  </section>
+
+  <section class="modal" id="modal-dark3">
+    <div class="modal_container bg-dark3">
+      <div class="modal_texto">
+        <h2 class="modal_titulo">Dark Souls III</h2>
+        <p class="modal_parrafo">
+          El cierre épico. Combate veloz, conexiones con todo el universo Souls y jefes inolvidables.
+        </p>
+        <a href="https://store.steampowered.com/app/374320/DARK_SOULS_III/" class="fab fa-steam btn-steam"></a>
+        <a href="#" class="modal_cerrar">Volver</a>
+      </div>
+      <img class="modal_img" src="img/DS3 Main.png" alt="Dark Souls III">
+    </div>
+  </section>
+
+  <section class="modal" id="modal-bloodborne">
+    <div class="modal_container bg-bloodborne">
+      <div class="modal_texto">
+        <h2 class="modal_titulo">Bloodborne</h2>
+        <p class="modal_parrafo">
+          Velocidad, agresividad y horror cósmico. 
+          El Souls más distinto y gótico de todos.
+        </p>
+        <a href="https://store.steampowered.com/app/374320/DARK_SOULS_III/" class="fab fa-playstation btn-play"></a>
+        <a href="#" class="modal_cerrar">Volver</a>
+      </div>
+      <img class="modal_img" src="img/Bloodborne Hunter.png" alt="Bloodborne">
+    </div>
+  </section>
+
+  <section class="modal" id="modal-sekiro">
+    <div class="modal_container bg-sekiro">
+      <div class="modal_texto">
+        <h2 class="modal_titulo">Sekiro</h2>
+        <p class="modal_parrafo">
+          Un giro hacia el sigilo y la precisión. 
+          Sin stats ni builds: pura habilidad.
+        </p>
+        <a href="https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice__GOTY_Edition/" class="fab fa-steam btn-steam"></a>
+        <a href="#" class="modal_cerrar">Volver</a>
+      </div>
+      <img class="modal_img" src="img/Sekiro Lobo.webp" alt="Sekiro">
+    </div>
+  </section>
+
+  <section class="modal" id="modal-elden">
+    <div class="modal_container bg-elden">
+      <div class="modal_texto">
+        <h2 class="modal_titulo">Elden Ring</h2>
+        <p class="modal_parrafo">
+          El mundo abierto definitivo de FromSoftware. 
+          Libertad, exploración y jefes de otro nivel.
+        </p>
+        <a href="https://store.steampowered.com/app/1245620/ELDEN_RING/" class="fab fa-steam btn-steam"></a>
+        <a href="#" class="modal_cerrar">Volver</a>
+      </div>
+      <img class="modal_img" src="img/Elden Ring Tarnished.png" alt="Elden Ring">
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

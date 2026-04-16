@@ -1,0 +1,336 @@
+html, body{
+  background-color: #202020;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Previene que el contenido se salga horizontalmente */
+  color: white;
+}
+
+html, body .light-mode{
+  background-color: white;
+  color: black;
+}
+
+h1{
+    font-size: 300%;
+}
+
+h1, p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+} 
+
+p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.que, .vale, .temporadas {
+    margin: 50px 0; /* Espaciado entre las secciones */
+    position: relative;
+}
+
+.que:not(:last-child)::after, .vale:not(:last-child)::after, .temporadas:not(:last-child)::after {
+    content: '🐉'; /* Icono temático */
+    display: block;
+    font-size: 30px; /* Tamaño del icono */
+    color: rgba(255, 255, 255, 0.6); /* Color sutil */
+    text-align: center; /* Centrar el icono */
+    margin: 20px auto; /* Margen alrededor del icono */
+    width: 50px; /* Ancho para centrar */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3); /* Barra divisoria */
+}
+
+.portada {
+    position: relative; /* Permite posicionar el contenido dentro de la sección */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    width: 100%; /* Ocupa todo el ancho */
+    background: 
+        linear-gradient( 
+            rgba(0, 0, 0, 1), /* Parte superior: oscuro */
+            rgba(0, 0, 0, 0.3) 50%, /* Centro: semitransparente */
+            rgba(0, 0, 0, 1)
+        ), 
+        url("img/title-fondo.gif"); /* Imagen de fondo principal */
+    background-size: cover; /* Ajusta el fondo para cubrir toda la sección */
+    background-position: center; /* Centra el fondo */
+    display: flex; /* Centra el contenido */
+    flex-direction: column; /*para que la flecha esté abajo*/
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    overflow: hidden; /* Previene cualquier contenido que sobresalga */
+}
+
+/*difuminado*/
+.portada::after {
+    content: ''; /* Necesario para los pseudo-elementos */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 65px; /* Altura del difuminado */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #202020 100%);
+    pointer-events: none; /* No interfiere con la interacción del usuario */
+}
+
+.portada img {
+    max-width: 70%; /* Ajusta el tamaño máximo del título para que no ocupe demasiado espacio */
+    height: auto; /* Mantiene las proporciones */
+}
+
+.portada .flecha {
+    margin-top: 20px; /* Separa un poco la flecha del título */
+    width: 30px; /* Ancho de la flecha */
+    height: 30px; /* Alto de la flecha */
+    border-right: 5px solid white; /* Línea derecha de la flecha */
+    border-bottom: 5px solid white; /* Línea inferior de la flecha */
+    animation: bounce .8s infinite alternate; /* Animación para dar el efecto de rebote */
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0) rotate(45deg); /* Empieza en su posición original, translateY para moverlo de arriba a abajo y rotate para que tenga la forma de flecha en V */
+    }
+    100% {
+        transform: translateY(10px) rotate(45deg); /* Mueve la flecha hacia abajo */
+    }
+}
+
+.portadas > img {
+    border-radius: 8px; /*bordes redondeados*/
+    width: 100%;
+    height: 225px;
+    box-shadow: 0px 0px 30px #000000; /*sombra de fondo (x=0, y=0, z=30)*/
+    transition: .3s;
+}
+
+.portadas{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 32px;
+}
+
+.portadas > img:hover{
+    transform: scale(0.9); /*hace que la imagen se achique un poco a escala sin poner width o height (si le pongo 1 queda igual, porque es el base)*/
+    filter: brightness(50%); /*oscurece la imagen*/
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.952); /* más oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/*Cuando esto esté activa, se ve el modal, mientras no este, no aparece, se configura con js*/
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+}
+
+/*el modal va de izquierda a derecha mientras aparece*/
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px); /* se mueve desde la izquierda */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.modal_container {
+  width: 95%;
+  max-width: 1100px;
+  max-height: 90vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2em;
+  padding: 2em;
+  border-radius: 5px;
+  box-shadow: 0 0 30px #000;
+
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 1.5), rgba(0, 0, 0, 0.5)), /* capa oscura */
+    url(img/background-demons.gif);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.modal_container--aparecer{
+    animation: fadeSlide 0.6s ease-out;
+}
+
+/* Texto alineado a la izquierda */
+.modal_texto {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal_titulo {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 0.5em;
+}
+
+.modal_parrafo {
+  font-size: 1.3rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* Botón de volver */
+.modal_cerrar {
+    font-family: "Poppins", sans-serif;
+    margin-top: 1.5em;
+    width: auto;
+    max-width: fit-content;
+    display: inline-block;
+    background-color: #82941d;
+    padding: 0.5em 1.2em;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.modal_cerrar:hover {
+  background-color: #181717;
+  color: #ffffff;
+}
+
+/*animación para cerrar el modal*/
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+.modal--hide {
+  animation: fadeOut 0.4s ease-out forwards;
+  pointer-events: none;
+}
+
+/*"variable" para que el personaje tenga animación propia*/
+@keyframes slideInRight { 
+  0% {
+    opacity: 0;
+    transform: translateX(100px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1.15); /* ya estaba con scale */
+  }
+}
+
+/* esto es porque la animación carga cada vez que recarga la pagina pero solo una vez y no se 
+ve por el oppacity, esto se configura con js*/
+.modal_img--animar {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+/* Imagen del personaje más grande y para la derecha*/
+.modal_img {
+  flex: 1;
+  max-width: 480px;
+  max-height: 400px;
+  height: auto;
+  object-fit: contain;
+  align-self: flex-end;
+  transform: scale(1.15); /* lo agranda un poco */
+}
+
+/*fondo de cada modal*/
+
+.bg-dark1 {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 1.5), rgba(0, 0, 0, 0.5)), url("img/background-dark1.gif");
+}
+
+.bg-dark2 {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 1.5), rgba(0, 0, 0, 0.5)), url("img/background-dark2.gif");
+}
+
+.bg-dark3 {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 1.5), rgba(0, 0, 0, 0.5)), url("img/background-dark3.gif");
+}
+
+.bg-bloodborne {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 1.5), rgba(0, 0, 0, 0.5)), url("img/background-bloodborne.gif");
+}
+
+.bg-sekiro {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 1.5), rgba(0, 0, 0, 0.5)), url("img/background-sekiro.gif");
+}
+
+.bg-elden {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 1.5), rgba(0, 0, 0, 0.5)), url("img/background-elden.gif");
+}
+
+
+.btn-steam {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #171a21; /* color steam */
+  color: white;
+  padding: 0.6em 1.2em;
+  border-radius: 6px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-top: 1.2em;
+  transition: background-color 0.3s, transform 0.2s;
+  width: auto;
+  max-width: fit-content;
+}
+
+.btn-steam:hover {
+  background-color: #2a475e;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.btn-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1f3874; /* color steam */
+  color: white;
+  padding: 0.6em 1.2em;
+  border-radius: 6px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-top: 1.2em;
+  transition: background-color 0.3s, transform 0.2s;
+  width: auto;
+  max-width: fit-content;
+}
+
+.btn-play:hover {
+  background-color: #317cb9;
+  transform: translateY(-2px);
+  color: #fff;
+}
